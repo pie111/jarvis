@@ -1,11 +1,13 @@
 from typing import Union
 from langchain_openai import OpenAI, ChatOpenAI
-from langchain_community.llms import Ollama
+from langchain_ollama import ChatOllama
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_groq import ChatGroq
 from langchain_ibm import WatsonxLLM  # Import Watsonx provider
 from core.config import settings
 
-def get_llm(provider_model: str) -> Union[OpenAI, ChatOpenAI, Ollama, ChatGroq, WatsonxLLM]:
+
+def get_llm(provider_model: str) -> Union[OpenAI, ChatOpenAI, ChatOllama, ChatGroq, WatsonxLLM,ChatGoogleGenerativeAI]:
     """
     Returns an LLM instance based on the provider and model specified.
     Example: 'openai/gpt-4', 'ollama/llama3', 'groq/mixtral-8x7b-32768', 'watsonx/ibm/granite-13b-instruct-v2'.
@@ -41,10 +43,8 @@ def get_llm(provider_model: str) -> Union[OpenAI, ChatOpenAI, Ollama, ChatGroq, 
             )
     
     elif provider == "ollama":
-        return Ollama(
-            model=model,
-            base_url=settings.OLLAMA_HOST,
-            temperature=0.7,
+        return ChatOllama(
+            model=model
         )
     
     elif provider == "groq":
@@ -52,6 +52,12 @@ def get_llm(provider_model: str) -> Union[OpenAI, ChatOpenAI, Ollama, ChatGroq, 
             model=model,
             api_key=settings.GROQ_API_KEY,
             temperature=0.7,
+        )
+    elif provider == "google":
+        print(f"Hey the model is  {model}")
+        return ChatGoogleGenerativeAI(
+            model=model,
+            api_key=settings.GOOGLE_API_KEY
         )
     
     elif provider == "watsonx":

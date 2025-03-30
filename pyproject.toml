@@ -18,8 +18,16 @@ langchain-openai = "^0.3.9"
 langchain-groq = "^0.3.1"
 langchain-ibm = "^0.3.8"
 langchain-chroma = "^0.2.2"
+langgraph = "0.2.59"
+langchain-mcp-adapters = "^0.0.5"
+langchain-google-genai = "^2.1.2"
+sqlalchemy = "^2.0.27"
+asyncpg = "^0.29.0"
+cryptography = "^42.0.5"
+alembic = "^1.15.2"
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+

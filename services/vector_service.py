@@ -20,13 +20,3 @@ class VectorService:
         """Search for similar documents in the vector store."""
         results = self.vector_store.similarity_search(query, k=k)
         return [doc.page_content for doc in results]
-
-# Singleton instance with default embedding model
-vector_service = VectorService()
-
-# Example usage
-if __name__ == "__main__":
-    docs = ["Hello, this is a test document.", "AI agents are awesome!", "ChromaDB rocks!"]
-    vector_service.add_documents(docs)
-    results = vector_service.search("AI agents")
-    print(results)
