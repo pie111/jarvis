@@ -51,7 +51,7 @@ A production-ready AI agent system built with FastAPI that enables dynamic tool 
    Create a `.env` file with:
    ```
    TAVILY_API_KEY=your_tavily_api_key
-   DATABASE_URL=postgres://postgres:password@127.0.0.1:5433/jarvis
+   DATABASE_URL=your_db_connection
    ```
 
 5. **Running the Application**
