@@ -1,3 +1,4 @@
+import dotenv
 from langchain_mcp_adapters.client import MultiServerMCPClient
 from langgraph.checkpoint.memory import MemorySaver
 import asyncio
@@ -11,6 +12,8 @@ from loguru import logger
 from core.config import settings
 import os
 memory = MemorySaver()
+from dotenv import load_dotenv
+load_dotenv()
 
 class ReactiveAgent:
     def __init__(self, llm_model: str): 
@@ -31,7 +34,7 @@ class ReactiveAgent:
                 "postgres": {
                     "command": "npx",
                     # Make sure to update to the full absolute path to your math_server.py file
-                    "args": ["-y", "@modelcontextprotocol/server-postgres", "postgres://postgres:password@127.0.0.1:5433/skill_server"],
+                    "args": ["-y", "@modelcontextprotocol/server-postgres", settings.MCP_POSTGRES_CONN_URL ],
                     "transport": "stdio",
                 },
                 "tavily": {

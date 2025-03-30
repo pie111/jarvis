@@ -28,6 +28,9 @@ class Settings(BaseSettings):
     DB_POOL_SIZE: int = os.getenv("DB_POOL_SIZE", 5)
     MAX_OVERFLOW: int = os.getenv("MAX_OVERFLOW", 10)
 
+    # MCP settings
+    MCP_POSTGRES_CONN_URL : Optional[str] = os.getenv("MCP_POSTGRES_CONN_URL")
+
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"
