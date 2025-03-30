@@ -1,0 +1,61 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+
+# Poetry
+dist/
+build/
+
+# Environment variables
+.env
+*.env
+
+# Logs
+*.log
+logs/
+
+# Testing
+.pytest_cache/
+coverage/
+.coverage
+htmlcov/
+*.xml
+
+# Editor/IDE files
+*.swp
+*.swo
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Dependency directories
+site-packages/
+lib/
+lib64/
+
+# ChromaDB data (if not tracked)
+chroma_data/
+*.db
+*.sqlite3
+
+# Miscellaneous
+*.bak
+*.tmp
+*.temp
+*.backup
+
+# Production artifacts
+*.pid
+*.sock
