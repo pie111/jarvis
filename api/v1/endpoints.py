@@ -21,3 +21,11 @@ async def chat(
     except Exception as e:
         logger.info(f"Error during cleanup: {str(e)}")
         return HTTPException(status_code=500, detail=messages.HTTP_500_INTERNAL_SERVER_ERROR)
+    
+
+@router.post('/tool')
+async def create_tool(
+    tool_data: dict,
+):
+    #TODO: Implement the logic to create a new tool
+    pass

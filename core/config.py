@@ -24,12 +24,9 @@ class Settings(BaseSettings):
     
     # Database settings
     DATABASE_URL: str = os.getenv("DATABASE_URL")
-    DB_PASSWORD: str = os.getenv("DB_PASSWORD", "postgres")
-    DB_USER: str = os.getenv("DB_USER", "postgres")
-    DB_HOST: str = os.getenv("DB_HOST", "localhost")
-    DB_PORT: str = os.getenv("DB_PORT", "5432")
-    DB_NAME: str = os.getenv("DB_NAME", "jarvis")
     ENCRYPTION_KEY: str = os.getenv("ENCRYPTION_KEY", "jarvis")
+    DB_POOL_SIZE: int = os.getenv("DB_POOL_SIZE", 5)
+    MAX_OVERFLOW: int = os.getenv("MAX_OVERFLOW", 10)
 
     class Config:
         env_file = ".env"
