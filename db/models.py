@@ -13,7 +13,7 @@ class Tools(Base):
     
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(String(30), nullable=False)
-    account_id: Mapped[str] = mapped_column(String(30), index=True, nullable=False)
+    account_id: Mapped[str] = mapped_column(String(30), index=True, nullable=True)
     config: Mapped[dict] = mapped_column(JSON, nullable=False)
     created_at: Mapped[datetime.datetime] = mapped_column(
         DateTime(timezone=True),

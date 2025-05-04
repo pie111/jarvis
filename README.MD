@@ -1,6 +1,6 @@
-# Jarvis - AI Agent System
+# Jarvis - AI Assistant
 
-A production-ready AI agent system built with FastAPI that enables dynamic tool integration and intelligent task execution. The system uses LangChain and the Model Context Protocol (MCP) to create flexible AI agents that can interact with various tools and services.
+AI agent system built with FastAPI that enables dynamic tool integration and intelligent task execution. The system uses LangChain and the Model Context Protocol (MCP) to create flexible AI agents that can interact with various tools and services.
 
 ## Features
 
